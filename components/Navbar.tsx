@@ -23,6 +23,9 @@ export function Navbar() {
           <Link href="/dashboard" className="hover:text-blue-600">
             Dashboard
           </Link>
+          <Link href="/dashboard/analytics" className="hover:text-blue-600">
+            Analytics
+          </Link>
           <Link href="/tools" className="hover:text-blue-600">
             Tools
           </Link>
