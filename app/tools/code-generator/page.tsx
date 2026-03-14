@@ -1,14 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase';
+import { subscribeToProjectUpdates } from '@/lib/realtime';
 
 export default function CodeGeneratorPage() {
   const [prompt, setPrompt] = useState('');
   const [output, setOutput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const supabase = createClient();
+
+  // Subscribe to project updates for real-time collaboration
+  useEffect(() => {
+    if (!selectedProjectId) return;
+
+    const subscription = subscribeToProjectUpdates(
+      selectedProjectId,
+      (payload) => {
+        console.log('New output from team member:', payload);
+        // Optionally refresh outputs or show notification
+      }
+    );
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [selectedProjectId]);
 
   const handleGenerate = async (e: React.FormEvent) => {
     e.preventDefault();
