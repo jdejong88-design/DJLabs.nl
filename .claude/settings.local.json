@@ -11,7 +11,17 @@
       "Bash(npm install:*)",
       "Bash(timeout 15 npm run dev)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm list:*)",
+      "Bash(ls -la /c/Users/jdejo/workspace/.claude/worktrees/zealous-newton/lib/supabase*)",
+      "Bash(grep -E \"^-.*\\\\.json|^-.*\\\\.ts$|^-.*\\\\.md$\")",
+      "Bash(npm run:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git merge:*)",
+      "Bash(git push:*)",
+      "Skill(commit-commands:commit-push-pr)",
+      "Skill(commit-commands:commit-push-pr:*)"
     ]
   }
 }

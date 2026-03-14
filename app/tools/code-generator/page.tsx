@@ -9,7 +9,7 @@ export default function CodeGeneratorPage() {
   const [output, setOutput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const selectedProjectId = null; // TODO: Set from project context
   const supabase = createClient();
 
   // Subscribe to project updates for real-time collaboration
