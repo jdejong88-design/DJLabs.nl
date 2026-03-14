@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(scoop install:*)",
+      "Bash(choco install:*)",
+      "Bash(brew install:*)",
+      "Bash(curl -L https://github.com/supabase/cli/releases/latest/download/supabase_windows_amd64.exe -o supabase.exe)",
+      "Bash(curl -s https://api.github.com/repos/supabase/cli/releases/latest)",
+      "Bash(curl -L https://github.com/supabase/cli/releases/download/v2.78.1/supabase_windows_amd64.tar.gz -o supabase.tar.gz)",
+      "Bash(mkdir -p ~/.local/bin)",
+      "Bash(mv supabase.exe ~/.local/bin/)",
+      "Bash(~/.local/bin/supabase --version)",
+      "Read(//c/Users/jdejo/**)",
+      "Bash(~/.bashrc)",
+      "Bash(source ~/.bashrc)",
+      "Bash(supabase --version)",
+      "Skill(commit-commands:commit)",
+      "Skill(commit-commands:commit:*)"
+    ]
+  }
+}
