@@ -6,7 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "supabase:status": "supabase status",
+    "supabase:logs": "supabase functions list",
+    "db:push": "supabase db push",
+    "db:pull": "supabase db pull",
+    "db:diff": "supabase db diff",
+    "dev:local": "npm run supabase:start && npm run dev"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.10.0",
@@ -24,6 +33,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
+    "supabase": "^2.78.1",
     "tailwindcss": "^3.4.0",
     "typescript": "^5"
   }
