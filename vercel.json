@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "outputDirectory": ".next",
+  "env": [
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_URL",
+      "value": "https://ojxsqtzdmwfwrlfgvfem.supabase.co"
+    },
+    {
+      "key": "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+      "value": "sb_publishable_2xp3Qzu3lrcBFfMtNNG0AQ_iuBFkpzr"
+    }
+  ]
+}
