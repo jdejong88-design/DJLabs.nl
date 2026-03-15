@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Toolkit - Landing Page Mockup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #FAFAFA;
+            --bg-secondary: #F5F5F4;
+            --text-primary: #0A0A0A;
+            --text-secondary: #6B7280;
+            --accent-primary: #2563EB;
+            --accent-secondary: #06B6D4;
+            --border-light: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 128px 32px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #F0F9FF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            transition: all 0.4s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Role Selector */
+        .role-selector {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 64px;
+            flex-wrap: wrap;
+        }
+
+        .role-btn {
+            padding: 16px 32px;
+            border: 2px solid var(--border-light);
+            background: white;
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .role-btn:hover {
+            border-color: var(--accent-primary);
+            background: #F0F9FF;
+            transform: translateY(-2px);
+        }
+
+        .role-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #1D4ED8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Value Prop Section */
+        .value-prop {
+            padding: 96px 32px;
+            background: white;
+        }
+
+        .value-prop-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .value-prop h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .value-prop-text {
+            font-size: 18px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 48px;
+            line-height: 1.8;
+        }
+
+        .value-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .highlight {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 12px;
+            color: var(--accent-primary);
+        }
+
+        .highlight h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .highlight p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Tools Section */
+        .tools-section {
+            padding: 96px 32px;
+            background: var(--bg-primary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-primary);
+        }
+
+        .tool-card.highlighted {
+            background: linear-gradient(135deg, #F0F9FF 0%, white 100%);
+            border: 2px solid var(--accent-primary);
+            transform: scale(1.05);
+            order: -1;
+        }
+
+        .tool-card.highlighted:nth-child(2) {
+            order: -2;
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            color: var(--accent-primary);
+        }
+
+        .tool-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .tool-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .tool-link {
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .tool-link:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 96px 32px;
+            background: white;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--accent-primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            padding: 96px 32px;
+            background: var(--bg-primary);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        .author-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .author-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 96px 32px;
+            background: white;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 40px;
+            background: var(--bg-primary);
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, #1D4ED8 100%);
+            color: white;
+            border: none;
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price-period {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .pricing-card.featured .price-period {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 14px;
+        }
+
+        .pricing-card.featured .pricing-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .pricing-card.featured .cta-button {
+            background: white;
+            color: var(--accent-primary);
+        }
+
+        .pricing-card.featured .cta-button:hover {
+            background: #F0F9FF;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 96px 32px;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, #1D4ED8 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .final-cta .cta-button {
+            background: white;
+            color: var(--accent-primary);
+        }
+
+        .final-cta .cta-button:hover {
+            background: #F0F9FF;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero {
+                padding: 64px 24px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .role-selector {
+                flex-direction: column;
+            }
+
+            .role-btn {
+                width: 100%;
+            }
+
+            .tool-card.highlighted {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="heroTitle">The AI toolkit built for developers</h1>
+            <p id="heroSubtitle">Save hours every week. Get back to what matters.</p>
+
+            <div class="role-selector">
+                <button class="role-btn active" data-role="developer">👨‍💻 Developer</button>
+                <button class="role-btn" data-role="designer">🎨 Designer</button>
+                <button class="role-btn" data-role="marketer">📢 Marketer</button>
+            </div>
+
+            <button class="cta-button">Get Started Free</button>
+        </div>
+    </section>
+
+    <!-- Value Prop Section -->
+    <section class="value-prop">
+        <div class="value-prop-content">
+            <h2 id="valuePropTitle">Write production code in minutes, not hours</h2>
+            <p class="value-prop-text" id="valuePropText">
+                Stop context-switching between ChatGPT and your IDE. Get AI assistance built specifically for developers—integrated directly into your workflow.
+            </p>
+
+            <div class="value-highlights" id="highlights">
+                <div class="highlight">
+                    <svg class="highlight-icon" data-lucide="zap"></svg>
+                    <h3 id="highlight1Title">Instant Code</h3>
+                    <p id="highlight1Text">Generate production-ready code from prompts</p>
+                </div>
+                <div class="highlight">
+                    <svg class="highlight-icon" data-lucide="gitlab"></svg>
+                    <h3 id="highlight2Title">Web Dev Helper</h3>
+                    <p id="highlight2Text">Build full-stack applications faster</p>
+                </div>
+                <div class="highlight">
+                    <svg class="highlight-icon" data-lucide="message-square"></svg>
+                    <h3 id="highlight3Title">AI Chat</h3>
+                    <p id="highlight3Text">Chat with context about your code</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <div class="section-header">
+            <h2>All the tools you need</h2>
+            <p>Everything built with your profession in mind</p>
+        </div>
+
+        <div class="tools-grid" id="toolsGrid">
+            <div class="tool-card highlighted" data-tool="code-generator">
+                <svg class="tool-icon" data-lucide="code-2"></svg>
+                <h3>Code Generator</h3>
+                <p>Generate production code from natural language prompts.</p>
+                <a href="#" class="tool-link">Learn more →</a>
+            </div>
+
+            <div class="tool-card highlighted" data-tool="web-dev">
+                <svg class="tool-icon" data-lucide="layout"></svg>
+                <h3>Web Dev Helper</h3>
+                <p>Build full-stack web applications with AI guidance.</p>
+                <a href="#" class="tool-link">Learn more →</a>
+            </div>
+
+            <div class="tool-card" data-tool="design-advisor">
+                <svg class="tool-icon" data-lucide="palette"></svg>
+                <h3>Design Advisor</h3>
+                <p>Get instant design feedback and creative inspiration.</p>
+                <a href="#" class="tool-link">Learn more →</a>
+            </div>
+
+            <div class="tool-card" data-tool="marketing-copy">
+                <svg class="tool-icon" data-lucide="pen-tool"></svg>
+                <h3>Marketing Copy</h3>
+                <p>Generate compelling marketing copy and campaigns.</p>
+                <a href="#" class="tool-link">Learn more →</a>
+            </div>
+
+            <div class="tool-card" data-tool="ai-chat">
+                <svg class="tool-icon" data-lucide="message-circle"></svg>
+                <h3>AI Chat</h3>
+                <p>Context-aware chat for all your questions and tasks.</p>
+                <a href="#" class="tool-link">Learn more →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="section-header">
+            <h2>How it works</h2>
+            <p id="workflowSubtitle">Your typical workflow</p>
+        </div>
+
+        <div class="workflow-steps" id="workflowSteps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3 id="step1Title">Describe</h3>
+                <p id="step1Text">Tell the AI what you need in plain English</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3 id="step2Title">Generate</h3>
+                <p id="step2Text">Get production-ready code in seconds</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 id="step3Title">Review</h3>
+                <p id="step3Text">Iterate and refine with AI assistance</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3 id="step4Title">Ship</h3>
+                <p id="step4Text">Deploy with confidence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="section-header">
+            <h2>Loved by builders</h2>
+            <p id="proofSubtitle">Hear from developers using our platform</p>
+        </div>
+
+        <div class="testimonials" id="testimonials">
+            <div class="testimonial">
+                <p class="testimonial-text" id="testimonial1Text">"This tool cut my development time in half. I can now build features in hours instead of days."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4 id="testimonial1Author">Sarah Chen</h4>
+                        <p id="testimonial1Role">Full-Stack Developer, TechCorp</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text" id="testimonial2Text">"The design feedback is instant and incredibly helpful. No more waiting for code review."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4 id="testimonial2Author">Marcus Reed</h4>
+                        <p id="testimonial2Role">Lead Designer, Studio X</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text" id="testimonial3Text">"I tested 10 campaign angles in a single morning. This is a game-changer for marketing."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <h4 id="testimonial3Author">Jessica Mills</h4>
+                        <p id="testimonial3Role">Marketing Manager, GrowthCo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="section-header">
+            <h2>Simple, transparent pricing</h2>
+            <p>Start free. Scale as you grow.</p>
+        </div>
+
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <div class="price-period">Forever</div>
+                <ul class="pricing-features">
+                    <li>✓ 10 API calls/day</li>
+                    <li>✓ Basic code generation</li>
+                    <li>✓ Community support</li>
+                    <li>✗ Advanced features</li>
+                </ul>
+                <button class="cta-button">Get Started</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Pro</h3>
+                <div class="price">$29</div>
+                <div class="price-period">per month</div>
+                <ul class="pricing-features">
+                    <li>✓ Unlimited API calls</li>
+                    <li>✓ All code generation tools</li>
+                    <li>✓ Priority support</li>
+                    <li>✓ Advanced features</li>
+                </ul>
+                <button class="cta-button">Start Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to save hours every week?</h2>
+        <p>Join thousands of developers, designers, and marketers already using our platform.</p>
+        <button class="cta-button">Get Started Free</button>
+    </section>
+
+    <script>
+        lucide.createIcons();
+
+        // Role-specific data
+        const roleData = {
+            developer: {
+                heroTitle: "The AI toolkit built for developers",
+                heroSubtitle: "Save hours every week. Get back to what matters.",
+                valuePropTitle: "Write production code in minutes, not hours",
+                valuePropText: "Stop context-switching between ChatGPT and your IDE. Get AI assistance built specifically for developers—integrated directly into your workflow.",
+                highlights: [
+                    { title: "Instant Code", text: "Generate production-ready code from prompts", icon: "zap" },
+                    { title: "Web Dev Helper", text: "Build full-stack applications faster", icon: "gitlab" },
+                    { title: "AI Chat", text: "Chat with context about your code", icon: "message-square" }
+                ],
+                primaryTools: ["code-generator", "web-dev"],
+                workflowSubtitle: "Your typical development workflow",
+                steps: [
+                    { title: "Describe", text: "Tell the AI what you need in plain English" },
+                    { title: "Generate", text: "Get production-ready code in seconds" },
+                    { title: "Review", text: "Iterate and refine with AI assistance" },
+                    { title: "Ship", text: "Deploy with confidence" }
+                ],
+                proofSubtitle: "Hear from developers using our platform",
+                testimonials: [
+                    { text: "This tool cut my development time in half. I can now build features in hours instead of days.", author: "Sarah Chen", role: "Full-Stack Developer, TechCorp" },
+                    { text: "Refactoring code that would take hours now takes minutes. Incredible.", author: "Alex Rodriguez", role: "Software Architect, DevWorks" },
+                    { text: "The code quality is surprisingly good. I only need minor tweaks.", author: "Jordan Blake", role: "Lead Engineer, BuildCo" }
+                ]
+            },
+            designer: {
+                heroTitle: "The AI toolkit built for designers",
+                heroSubtitle: "Inspiration + feedback, all in one place.",
+                valuePropTitle: "Get design feedback without leaving your tools",
+                valuePropText: "Tired of waiting for code review? Get instant design feedback, iterate faster, and test ideas in minutes. Built specifically for design workflows.",
+                highlights: [
+                    { title: "Design Advisor", text: "Instant feedback on your designs", icon: "palette" },
+                    { title: "Web Dev Helper", text: "Understand design system implementation", icon: "gitlab" },
+                    { title: "AI Chat", text: "Chat about design decisions", icon: "message-square" }
+                ],
+                primaryTools: ["design-advisor", "web-dev"],
+                workflowSubtitle: "Your typical design workflow",
+                steps: [
+                    { title: "Review Brief", text: "Start with a clear design brief" },
+                    { title: "Get Feedback", text: "Instant AI feedback on your direction" },
+                    { title: "Iterate", text: "Test variations and refine ideas" },
+                    { title: "Ship", text: "Hand off with confidence" }
+                ],
+                proofSubtitle: "Hear from designers using our platform",
+                testimonials: [
+                    { text: "Getting design feedback instantly is amazing. I iterate so much faster now.", author: "Marcus Reed", role: "Lead Designer, Studio X" },
+                    { text: "The design advisor understands context. It's like having a creative partner.", author: "Emma Wilson", role: "UX Designer, Creative Labs" },
+                    { text: "I can test 5 concepts in a day now. This is game-changing.", author: "Priya Patel", role: "Product Designer, InnovateCo" }
+                ]
+            },
+            marketer: {
+                heroTitle: "The AI toolkit built for marketers",
+                heroSubtitle: "Test 10 angles before lunch.",
+                valuePropTitle: "Generate winning copy in minutes",
+                valuePropText: "Stop waiting for copy iterations. Generate campaign angles, landing pages, and email sequences instantly. Built for marketers who move fast.",
+                highlights: [
+                    { title: "Marketing Copy", text: "Generate compelling copy instantly", icon: "pen-tool" },
+                    { title: "Code Generator", text: "Build landing pages without code", icon: "code-2" },
+                    { title: "AI Chat", text: "Brainstorm campaign ideas", icon: "message-square" }
+                ],
+                primaryTools: ["marketing-copy", "code-generator"],
+                workflowSubtitle: "Your typical marketing workflow",
+                steps: [
+                    { title: "Brief", text: "Share your campaign goals" },
+                    { title: "Generate", text: "Get multiple copy variations" },
+                    { title: "Test", text: "Quickly evaluate angles" },
+                    { title: "Ship", text: "Launch with data-backed copy" }
+                ],
+                proofSubtitle: "Hear from marketers using our platform",
+                testimonials: [
+                    { text: "I tested 10 campaign angles in a single morning. This is a game-changer.", author: "Jessica Mills", role: "Marketing Manager, GrowthCo" },
+                    { text: "The copy suggestions are actually good. I barely need to edit them.", author: "David Kim", role: "Content Strategist, Scale Inc" },
+                    { text: "We've cut our campaign creation time by 70%. Unreal.", author: "Sophie Martin", role: "Marketing Director, BrandHub" }
+                ]
+            }
+        };
+
+        // Role selector buttons
+        const roleButtons = document.querySelectorAll('.role-btn');
+        let currentRole = 'developer';
+
+        roleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                roleButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentRole = btn.dataset.role;
+                updatePageContent();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        function updatePageContent() {
+            const data = roleData[currentRole];
+
+            // Update hero
+            document.getElementById('heroTitle').textContent = data.heroTitle;
+            document.getElementById('heroSubtitle').textContent = data.heroSubtitle;
+
+            // Update value prop
+            document.getElementById('valuePropTitle').textContent = data.valuePropTitle;
+            document.getElementById('valuePropText').textContent = data.valuePropText;
+
+            // Update highlights
+            const highlightElements = document.querySelectorAll('.highlight');
+            data.highlights.forEach((highlight, i) => {
+                highlightElements[i].querySelector('h3').textContent = highlight.title;
+                highlightElements[i].querySelector('p').textContent = highlight.text;
+                highlightElements[i].querySelector('[data-lucide]').setAttribute('data-lucide', highlight.icon);
+            });
+            lucide.createIcons();
+
+            // Update tools highlighting
+            document.querySelectorAll('.tool-card').forEach(card => {
+                card.classList.remove('highlighted');
+            });
+            data.primaryTools.forEach(tool => {
+                document.querySelector(`[data-tool="${tool}"]`).classList.add('highlighted');
+            });
+
+            // Update workflow
+            document.getElementById('workflowSubtitle').textContent = data.workflowSubtitle;
+            const stepElements = document.querySelectorAll('.step');
+            data.steps.forEach((step, i) => {
+                stepElements[i].querySelector('h3').textContent = step.title;
+                stepElements[i].querySelector('p').textContent = step.text;
+            });
+
+            // Update testimonials
+            document.getElementById('proofSubtitle').textContent = data.proofSubtitle;
+            const testimonialElements = document.querySelectorAll('.testimonial');
+            data.testimonials.forEach((testimonial, i) => {
+                testimonialElements[i].querySelector('.testimonial-text').textContent = testimonial.text;
+                testimonialElements[i].querySelector('h4').textContent = testimonial.author;
+                testimonialElements[i].querySelector('p').textContent = testimonial.role;
+            });
+        }
+
+        // Initialize
+        updatePageContent();
+    </script>
+</body>
+</html>
